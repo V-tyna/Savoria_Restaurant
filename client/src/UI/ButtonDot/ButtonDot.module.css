@@ -1,0 +1,13 @@
+.dot {
+	width: 1.5em;
+	height: 1.5em;
+	border: 1px solid #ccc;
+	background-color: #ccc;
+	border-radius: 50%;
+	margin-right: 0.5rem;
+}
+
+.active {
+	background-color: #ffc60b;
+	border: 1px solid #ffc60b;
+}
