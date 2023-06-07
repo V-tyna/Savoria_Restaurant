@@ -2,7 +2,7 @@ import { FC } from 'react';
 import classes from './ButtonArrow.module.css';
 
 interface ButtonArrowProps {
-	direction: string;
+	direction: 'left' | 'right';
 	onClickFn: () => void;
 }
 

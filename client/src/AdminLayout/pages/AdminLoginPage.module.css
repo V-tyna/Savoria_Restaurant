@@ -1,0 +1,66 @@
+.login-page-layer h1 {
+	text-align: center;
+	padding: 2rem;
+}
+
+.form-block {
+	margin: 1rem auto;
+	padding: 0.5rem;
+	width: 600px;
+	height: 4rem;
+	background: black;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.form-block label {
+	width: 15%;
+	text-align: center;
+}
+
+.form-block input {
+	width: 70%;
+	height: 2rem;
+}
+
+.button-block {
+	display: flex;
+	justify-content: end;
+	margin: 1rem auto;
+	padding: 0.5rem;
+	width: 600px;
+}
+
+h1 {
+	margin: 0;
+	padding: 1rem;
+	color: #ffc60b;
+}
+
+@media (max-width: 768px) {
+	.form-block {
+		display: flex;
+		flex-direction: column;
+		height: 5rem;
+		width: 90%;
+		padding: 1rem;
+	}
+
+	.form-block label {
+		text-align: start;
+		width: 100%;
+	}
+
+	.form-block input {
+		width: calc(100% - 0.5rem);
+	}
+
+	.button-block {
+		width: 90%;
+		justify-content: center;
+	}
+}
