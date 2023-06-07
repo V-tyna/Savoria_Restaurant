@@ -2,14 +2,16 @@ button {
 	border: none;
 	font-size: 1rem;
 	font-weight: 600;
-	box-shadow: 3px 3px 3px rgb(27, 27, 27);
+	box-shadow: 0 3px 3px rgb(27, 27, 27);
+	padding: 0 1.5rem;
+	transition: all 0.3s ease-in;
+	height: 3rem;
 }
 
 .black {
 	background-color: black;
 	color: #ffc60b;
-	padding: 1rem 2rem;
-	transition: all 0.3s ease-in;
+	position: relative;
 }
 
 .black:hover {
@@ -19,10 +21,71 @@ button {
 	transition: all 0.3s ease-in;
 }
 
+.black::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+	width: 0;
+	height: 0;
+	border-top: 1.5rem solid transparent;
+	border-bottom: 1.5rem solid transparent;
+	border-right: 1.5rem solid black;
+	transition: all 0.3s ease-in;
+}
+
+.black::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -1.5rem;
+	width: 0;
+	height: 0;
+	border-top: 1.5rem solid transparent;
+	border-bottom: 1.5rem solid transparent;
+	border-left: 1.5rem solid black;
+	transition: all 0.3s ease-in;
+}
+
+.black:hover::before {
+	border-right: 1.5rem solid #ff8b00;
+	transition: all 0.3s ease-in;
+}
+
+.black:hover::after {
+	border-left: 1.5rem solid #ff8b00;
+	transition: all 0.3s ease-in;
+}
+
 .yellow {
 	background-color: #ffc60b;
 	color: black;
-	padding: 1rem 2rem;
+	position: relative;
+}
+
+.yellow::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+	width: 0;
+	height: 0;
+	border-top: 1.5rem solid transparent;
+	border-bottom: 1.5rem solid transparent;
+	border-right: 1.5rem solid #ffc60b;
+	transition: all 0.3s ease-in;
+}
+
+.yellow::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -1.5rem;
+	width: 0;
+	height: 0;
+	border-top: 1.5rem solid transparent;
+	border-bottom: 1.5rem solid transparent;
+	border-left: 1.5rem solid #ffc60b;
 	transition: all 0.3s ease-in;
 }
 
@@ -30,5 +93,15 @@ button {
 	cursor: pointer;
 	background-color: black;
 	color: #ffc60b;
+	transition: all 0.3s ease-in;
+}
+
+.yellow:hover::before {
+	border-right: 1.5rem solid black;
+	transition: all 0.3s ease-in;
+}
+
+.yellow:hover::after {
+	border-left: 1.5rem solid black;
 	transition: all 0.3s ease-in;
 }
