@@ -25,5 +25,11 @@ export const loginAction = async ({ request }: LoaderFunctionArgs) => {
 
   // otherwise create the user and redirect
   //await createUser(email, password);
+  // const resp = await fetch('http://localhost:4200/admin/login', {
+  //   method: 'POST',
+  //   headers: { 'Content-type': 'application/json' },
+  //   body: JSON.stringify({ email, password })
+  // });
+  // console.log('RESP: ', await resp.json())
   return redirect('/admin/dashboard');
 }
