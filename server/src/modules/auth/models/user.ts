@@ -1,5 +1,5 @@
 import { Document, Model, model, Schema } from 'mongoose';
-import { Password } from '../services/password';
+import { Password } from '../../../services/password';
 
 interface UserAttrs {
   email: string;
@@ -18,7 +18,8 @@ interface UserDoc extends Document {
 const userSchema = new Schema({
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   password: {
     type: String,

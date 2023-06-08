@@ -9,7 +9,11 @@ const ButtonSubmit: FC<{
 	return (
 		<button
 			type='submit'
-			className={classes[buttonStyle ? buttonStyle : 'black']}
+			className={
+				classes[buttonStyle ? buttonStyle : 'black'] +
+				' ' +
+				classes['submit-button']
+			}
 		>
 			{buttonName}
 		</button>
