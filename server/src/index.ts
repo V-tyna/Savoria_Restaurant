@@ -1,4 +1,5 @@
 import express, { Application } from 'express';
+import 'express-async-errors';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
@@ -6,13 +7,20 @@ import { KEYS } from './configs/keys';
 import { User } from './modules/auth/models/user';
 import authRouter from './modules/auth/routes/auth';
 import { Password } from './services/password';
+import { errorHandler } from 'middlewares/error-handler';
 
 const app: Application = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.use(authRouter);
+app.use('/admin', authRouter);
+
+app.all('*', async () => {
+  // throw new NotFoundError();
+});
+
+app.use(errorHandler);
 
 const start = async () => {
   try {

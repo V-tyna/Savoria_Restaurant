@@ -1,13 +1,19 @@
 {
-	"exclude": ["./coverage", "./dist", "jest.config.js", "./__tests__"],
+	"exclude": ["./coverage", "./dist", "./node_modules", "jest.config.js"],
 	"ts-node": {
 		"transpileOnly": true,
 		"files": true
 	},
 	"compilerOptions": {
+		"baseUrl": "./src",
+		"paths": {
+			"@services/*": ["./services/*"],
+			"@rootSrc/*": ["./*"]
+		},
 		"target": "es2016",
+		"types": ["@types/jest", "jest", "node"],
 		"module": "commonjs",
-		"rootDir": "./src",
+		"rootDirs": ["./src", "./__tests__"],
 		"moduleResolution": "node",
 		"outDir": "./dist",
 		"esModuleInterop": true,

@@ -10,7 +10,7 @@ interface UserModel extends Model<UserDoc> {
   build(attrs: UserAttrs): UserDoc
 }
 
-interface UserDoc extends Document {
+export interface UserDoc extends Document {
   email: string;
   password: string;
 }
