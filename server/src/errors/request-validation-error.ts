@@ -1,7 +1,6 @@
-
 import { ValidationError } from 'express-validator';
 
-import { CommonResponseError } from 'interfaces/common-response-error';
+import { CommonResponseError } from '../interfaces/common-response-error';
 import { CustomError } from './custom-error';
 
 export class RequestValidationError extends CustomError {

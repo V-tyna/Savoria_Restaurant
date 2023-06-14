@@ -1,4 +1,4 @@
-import { CommonResponseError } from 'interfaces/common-response-error';
+import { CommonResponseError } from '../interfaces/common-response-error';
 import { CustomError } from './custom-error';
 
 export class BadRequestError extends CustomError {

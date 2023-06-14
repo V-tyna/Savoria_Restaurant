@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
-
-import { ONE_HOUR_IN_MILLISECONDS } from '@rootSrc/configs/variables';
-import { RefreshToken } from '@rootSrc/modules/auth/models/refresh-token';
+import { ONE_HOUR_IN_MILLISECONDS } from '../configs/variables';
+import { RefreshToken } from '../modules/auth/models/refresh-token';
 
 export const RefreshTokenService = {
   find: async (token: string) => {

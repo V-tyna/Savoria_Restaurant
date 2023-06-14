@@ -5,10 +5,10 @@
 		"files": true
 	},
 	"compilerOptions": {
-		"baseUrl": "./src",
+		"baseUrl": "./",
 		"paths": {
-			"@services/*": ["./services/*"],
-			"@rootSrc/*": ["./*"]
+			"@services/*": ["./src/services/*"],
+			"@rootSrc/*": ["./src/*"]
 		},
 		"target": "es2016",
 		"types": ["@types/jest", "jest", "node"],

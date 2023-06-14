@@ -1,13 +1,11 @@
+import cors from 'cors';
 import express, { Application } from 'express';
 import 'express-async-errors';
 import mongoose from 'mongoose';
-import cors from 'cors';
 
 import { KEYS } from './configs/keys';
-import { User } from './modules/auth/models/user';
+import { errorHandler } from './middlewares/error-handler';
 import authRouter from './modules/auth/routes/auth';
-import { Password } from './services/password';
-import { errorHandler } from 'middlewares/error-handler';
 
 const app: Application = express();
 

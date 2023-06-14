@@ -1,5 +1,4 @@
-import { CommonResponseError } from 'interfaces/common-response-error';
-
+import { CommonResponseError } from '../interfaces/common-response-error';
 
 export abstract class CustomError extends Error {
   abstract statusCode: number;

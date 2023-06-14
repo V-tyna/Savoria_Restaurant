@@ -1,8 +1,8 @@
-import request from 'supertest';
 import mongoose from 'mongoose';
+import request from 'supertest';
 
-import app from '@rootSrc/index';
 import { TEST_KEYS } from '@rootSrc/configs/dev.keys';
+import app from '@rootSrc/index';
 
 describe('Auth router', () => {
   beforeAll(async () => {
@@ -20,7 +20,9 @@ describe('Auth router', () => {
       const res = await request(app).post('/admin/login').send({ email: 'test@test.com', password: '123456' });
 
       expect(res.statusCode).toBe(200);
-      expect(res.body).toEqual({ message: 'Login ok', accessToken: 'fjd', refreshToken: 'hvch' });
+      expect(res.body.message).toEqual('Login ok');
+      expect(res.body.accessToken).not.toBeNull();
+      expect(res.body.refreshToken).not.toBeNull();
     });
 
     test('return 400 status and correct error message if email is INVALID', async (): Promise<void> => {

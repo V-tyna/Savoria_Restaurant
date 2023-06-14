@@ -1,8 +1,9 @@
-import { KEYS } from '@rootSrc/configs/keys';
-import { RefreshTokenService } from '@services/refresh-token';
 import jwt from 'jsonwebtoken';
 import mongoose from 'mongoose';
 import { v4 as createRandomId } from 'uuid';
+
+import { KEYS } from '../configs/keys';
+import { RefreshTokenService } from '../services/refresh-token';
 
 type TokenPair = {
   token: string;

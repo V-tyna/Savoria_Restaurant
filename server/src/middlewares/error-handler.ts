@@ -1,8 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
-import { CustomError } from 'errors/custom-error';
-import { CommonResponseError } from 'interfaces/common-response-error';
-
+import { CustomError } from '../errors/custom-error';
+import { CommonResponseError } from '../interfaces/common-response-error';
 
 export const errorHandler = (
   err: Error,

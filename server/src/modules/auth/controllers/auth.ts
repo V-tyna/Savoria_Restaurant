@@ -1,11 +1,11 @@
 import { NextFunction, Request, Response } from 'express';
 import { validationResult } from 'express-validator';
 
-import { BadRequestError } from 'errors/bad-request-error';
-import { UserService } from '@services/user';
-import { Password } from '@services/password';
-import { RequestValidationError } from 'errors/request-validation-error';
-import { issueTokenPair } from '@rootSrc/utils/issue-token-pair';
+import { BadRequestError } from '../../../errors/bad-request-error';
+import { RequestValidationError } from '../../../errors/request-validation-error';
+import { Password } from '../../../services/password';
+import { UserService } from '../../../services/user';
+import { issueTokenPair } from '../../../utils/issue-token-pair';
 
 export const authController = {
   postLogin: async (req: Request, res: Response, next: NextFunction) => {
@@ -34,7 +34,7 @@ export const authController = {
     console.log('TOKENS: ', token, refreshToken)
 
     // token expiresIn, accessToken, refreshToken
-    return res.status(200).json({ message: 'Login ok', accessToken: 'fjd', refreshToken: 'hvch' });
+    return res.status(200).json({ message: 'Login ok', accessToken: 'newtoken', refreshToken: 'newrefreshtoken' });
   },
   postLogout: (req: Request, res: Response) => {
   },
