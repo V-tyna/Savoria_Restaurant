@@ -1,20 +1,31 @@
+import { TokenError } from '../errors/token-error';
 import mongoose from 'mongoose';
-import { ONE_HOUR_IN_MILLISECONDS } from '../configs/variables';
+
 import { RefreshToken } from '../modules/auth/models/refresh-token';
 
 export const RefreshTokenService = {
   find: async (token: string) => {
-    return RefreshToken.findOne({ token });
+    try {
+      return RefreshToken.findOne({ token });
+    } catch (err) {
+      throw new TokenError(403, 'Finding refresh token record error.');
+    }
   },
 
-  remove: async (token: string) => {
-    await RefreshToken.deleteOne({ token });
+  remove: async (userId: mongoose.Types.ObjectId) => {
+    try {
+      await RefreshToken.deleteOne({ userId });
+    } catch (err) {
+      throw new TokenError(403, 'Removing refresh token record error.');
+    }
   },
 
   add: async (userId: mongoose.Types.ObjectId, token: string) => {
-    const expiresIn = new Date(Date.now() + ONE_HOUR_IN_MILLISECONDS);
-
-    const newRefreshToken = new RefreshToken({ userId, token, expiresIn });
-    await newRefreshToken.save();
+    try {
+      const newRefreshToken = new RefreshToken({ userId, token });
+      await newRefreshToken.save();
+    } catch (err) {
+      throw new TokenError(403, 'Add refresh token record error.');
+    }
   }
 };

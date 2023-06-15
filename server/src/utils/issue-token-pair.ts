@@ -16,8 +16,9 @@ export const issueTokenPair = async (userId: mongoose.Types.ObjectId, email: str
   await RefreshTokenService.add(userId, refreshToken);
 
   const token = jwt.sign({ userId, email }, KEYS.JWT_SECRET, { expiresIn: '1h' });
+
   return {
     token,
     refreshToken
   }
-}
+};

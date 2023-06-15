@@ -4,6 +4,7 @@ import 'express-async-errors';
 import mongoose from 'mongoose';
 
 import { KEYS } from './configs/keys';
+import { NotFoundError } from './errors/not-found-error';
 import { errorHandler } from './middlewares/error-handler';
 import authRouter from './modules/auth/routes/auth';
 
@@ -15,7 +16,7 @@ app.use(cors());
 app.use('/admin', authRouter);
 
 app.all('*', async () => {
-  // throw new NotFoundError();
+  throw new NotFoundError();
 });
 
 app.use(errorHandler);
